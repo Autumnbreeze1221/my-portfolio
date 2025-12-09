@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .card {
+        width: 900px;
+        background: #121212;
+        border-radius: 14px;
+        padding: 60px 70px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0px 25px rgba(0,0,0,0.6);
+    }
+    .left { width: 45%; }
+    .left h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        color: #b74b4b;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .left h3 { font-size: 18px; margin-bottom: 20px; color: #fdfcfc; }
+    .left p { font-size: 14px; line-height: 1.6; color: #cecaca; margin-bottom: 35px; }
+    .email-block { display: flex; align-items: center; gap: 8px; margin-bottom: 25px; }
+    .email-block i { font-size: 20px; color: #b74b4b; }
+    .email-block a { text-decoration: none; color: #6a3b3b; font-weight: 400; }
+    .social-icons i { font-size: 20px; margin-right: 16px; cursor: pointer; transition: 0.2s ease; color: #f7f6f6; }
+    .social-icons i:hover { color: #b74b4b; transform: scale(1.15); }
+    .right { width: 45%; }
+    label { font-size: 13px; margin-bottom: 6px; display: inline-block; color: #c8c5c5; }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d0c4c1;
+        border-radius: 5px;
+        background: white;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+    }
+    input:focus, textarea:focus {
+        border-color: #b74b4b;
+        outline: none;
+        box-shadow: 0 0 4px rgba(183,75,75,0.4);
+    }
+    .row { display: flex; gap: 12px; }
+    button {
+        background: #b74b4b;
+        border: none;
+        padding: 12px 28px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        float: right;
+        transition: 0.2s;
+    }
+    button:hover { background: #9d3e3e; transform: scale(1.04); }
+    /* simple toast */
+    .toast {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        background:#1b1b1b;
+        color:#fff;
+        border-left:4px solid #b74b4b;
+        padding:12px 18px;
+        border-radius:6px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.5);
+        opacity:0;
+        transform:translateY(10px);
+        transition:0.35s ease;
+        z-index:9999;
+    }
+    .toast.show { opacity:1; transform:translateY(0); }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="left">
+        <h1>Get in Touch</h1>
+        <h3>I’d like to hear from you!</h3>
+
+        <p>If you have any inquiries or just want to<br>say hi, please use the contact form!</p>
+
+        <div class="email-block">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:ameshaafrian145@gmail.com">ameshaafrian145@gmail.com</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1GKtMMuQQu/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/Autumnbreeze1221"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/Ame_shakespeare?t=0LkijQErVSaAp_2HIjDuYw&s=09"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/tiramesucake_/?igsh=dDdmZjB4eG1xaDZj#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="right">
+
+        <div class="row">
+            <div style="width: 50%;">
+                <label>First Name</label>
+                <input type="text" id="firstName">
+            </div>
+
+            <div style="width: 50%;">
+                <label>Last Name</label>
+                <input type="text" id="lastName">
+            </div>
+        </div>
+
+        <label>Email *</label>
+        <input type="email" id="emailField">
+
+        <label>Message</label>
+        <textarea rows="5" id="messageField"></textarea>
+
+        <button id="sendBtn" type="button">Send</button>
+    </div>
+
+</div>
+
+<div class="toast" id="toast">Message sent</div>
+
+<!-- EmailJS library: MUST be loaded before you call emailjs.init/send -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+/* ini inisialisasi dan handler - pastikan ini dijalankan setelah library dimuat */
+(function(){
+    emailjs.init("LH3SbuD9FFsT3_wpB"); // public key
+
+    const sendBtn = document.getElementById("sendBtn");
+    const toast = document.getElementById("toast");
+
+    function showToast(txt){
+        toast.textContent = txt;
+        toast.classList.add("show");
+        setTimeout(()=>toast.classList.remove("show"), 3000);
+    }
+
+    sendBtn.addEventListener("click", function(){
+        const first = document.getElementById("firstName").value.trim();
+        const last = document.getElementById("lastName").value.trim();
+        const email = document.getElementById("emailField").value.trim();
+        const message = document.getElementById("messageField").value.trim();
+
+        if(!email || !message){
+            showToast("Email and message are required");
+            return;
+        }
+
+        sendBtn.disabled = true;
+        sendBtn.textContent = "Sending...";
+
+        const templateParams = {
+            name: (first + " " + last).trim(),
+            email: email,
+            title: "Contact Form Message",
+            message: message
+        };
+
+        emailjs.send("service_m8wejg6", "template_k5rt6xe", templateParams)
+            .then(function(resp){
+                showToast("Message sent successfully");
+                sendBtn.disabled = false;
+                sendBtn.textContent = "Send";
+                // optional: clear form
+                document.getElementById("firstName").value = "";
+                document.getElementById("lastName").value = "";
+                document.getElementById("emailField").value = "";
+                document.getElementById("messageField").value = "";
+            }, function(err){
+                console.error("EmailJS error:", err);
+                showToast("Failed to send message");
+                sendBtn.disabled = false;
+                sendBtn.textContent = "Send";
+            });
+    });
+})();
+</script>
+
+</body>
+</html>

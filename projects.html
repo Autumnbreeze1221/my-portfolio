@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <audio id="bgm" src="C:\Users\LENOVO\tugas\shdD\Nadin Amizah - Rayuan Perempuan Gila (Official Lyric Video) - Nadin Amizah.mp3" autoplay loop muted></audio>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+.container{
+            padding: 12rem 9% 5rem;
+        }
+
+        h1{
+            font-size: 5rem;
+            color: #b74b4b;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .project-box{
+            background: #111;
+            padding: 3rem;
+            border: 2px solid #b74b4b;
+            margin-bottom: 4rem;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .project-box:hover{
+            transform: scale(1.02);
+            box-shadow: 0 0 20px #b74b4b;
+        }
+
+        .project-title{
+            font-size: 3rem;
+            font-weight: 600;
+            color: #b74b4b;
+            margin-bottom: 2rem;
+        }
+
+        video{
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #b74b4b;
+            margin-bottom: 2rem;
+        }
+
+        .desc{
+            font-size: 1.7rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .next-btn{
+    position: fixed;
+    z-index: 9999;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    background: #b74b4b;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #b74b4b70;
+}
+
+.next-btn:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 25px #b74b4b, 0 0 45px #b74b4b;
+}
+
+.prev-btn{
+    position: fixed;
+    z-index: 9999;
+    bottom: 40px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+    background: #b74b4b;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #b74b4b70;
+}
+
+.prev-btn:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 25px #b74b4b, 0 0 45px #b74b4b;
+}
+    </style>
+</head>
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Amesha Afrian</a>
+
+        <nav>
+            <a href="index.html" >Home</a>
+            <a href="projects.html" >projects</a>
+            <a href="skills.html" >Skills</a>
+            <a href="edu.html" >Education</a>
+            <a href="exp.html" >Experience</a>
+            <a href="contact.html" >Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>My Project</h1>
+
+        <div class="project-box">
+            <div class="project-title">Hand Gesture Control Project</div>
+
+            <video id="projectVideo" controls>
+                <source src="C:\Users\LENOVO\tugas\utspw\portfolio\WhatsApp Video 2025-12-08 at 11.34.07_a3c1d90f.mp4" type="video/mp4">
+            </video>
+
+            <!-- DESKRIPSI -->
+            <p class="desc">
+                Project ini menggunakan gesture tangan seperti telapak tangan terbuka dan kepalan 
+                untuk mengendalikan objek secara real-time. Sistem ini dibangun menggunakan model 
+                machine learning sederhana dan diintegrasikan ke game untuk kontrol tanpa tombol.
+            </p>
+        </div>
+
+    </div>
+    <button class="next-btn" onclick="nextPage('skills.html')">
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
+<button class="prev-btn"  onclick="prevPage('index.html')">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+<script src="script.js"></script>
+<script>
+    const video = document.getElementById("projectVideo");
+    const music = document.getElementById("bgm");
+
+    if (video && music) {
+        video.addEventListener("play", () => {
+            if (!music.paused) music.pause();
+        });
+
+        video.addEventListener("pause", () => {
+            music.play();
+        });
+
+       video.addEventListener("ended", () => {
+            music.play();
+        });
+    }
+
+if (sessionStorage.getItem("music") === "on") {
+    music.play().catch(()=>{});
+}
+
+function nextPage(url) {
+    music.play(); 
+    sessionStorage.setItem("music", "on");
+    window.location.href = url;
+}
+function prevPage(url) {
+    music.play(); 
+    sessionStorage.setItem("music", "on");
+    window.location.href = url;
+}
+</script>
+</body>
+</html>
+

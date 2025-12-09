@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <audio id="bgm" src="C:\Users\LENOVO\tugas\shdD\Nadin Amizah - Rayuan Perempuan Gila (Official Lyric Video) - Nadin Amizah.mp3" autoplay loop muted></audio>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+    .education-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 50px 20px;
+    }
+
+    .edu-title {
+        padding: 10rem 9% 4rem;
+        font-size: 5rem;
+        color: #b74b4b;
+        margin-bottom: 2rem;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: fadeIn 1s ease;
+    }
+
+    .edu-section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 35px;
+        margin-bottom: 40px;
+        border-radius: 14px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.3s ease;
+    }
+
+    .edu-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    .edu-section h2 {
+        font-size: 1.9rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .edu-sub {
+        opacity: 0.7;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    .edu-line {
+        width: 70px;
+        height: 3px;
+        background: #b74b4b;
+        margin: 15px 0 25px 0;
+        border-radius: 2px;
+        animation: expandLine 1s ease forwards;
+        transform-origin: left;
+    }
+
+    .edu-desc,
+    .edu-reflection {
+        line-height: 1.7;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .edu-quote {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        border-left: 4px solid #b74b4b;
+        padding-left: 20px;
+        opacity: 0.9;
+    }
+
+    .edu-quote span {
+        display: block;
+        margin-top: 10px;
+        opacity: 0.5;
+        font-size: 1.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes expandLine {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+    }
+
+    .fade-up { opacity: 0; transform: translateY(25px); transition: 0.8s; }
+    .fade-left { opacity: 0; transform: translateX(-25px); transition: 0.8s; }
+    .fade-right { opacity: 0; transform: translateX(25px); transition: 0.8s; }
+
+    .fade-show {
+        opacity: 1 !important;
+        transform: translate(0,0) !important;
+    }
+    .next-btn{
+    position: fixed;
+    z-index: 9999;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    background: #b74b4b;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #b74b4b70;
+}
+
+.next-btn:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 25px #b74b4b, 0 0 45px #b74b4b;
+}
+
+.prev-btn{
+    position: fixed;
+    z-index: 9999;
+    bottom: 40px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+    background: #b74b4b;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #b74b4b70;
+}
+
+.prev-btn:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 25px #b74b4b, 0 0 45px #b74b4b;
+}
+
+    </style>\
+</head>
+<script src="script.js"></script>
+<script>const audio = document.getElementById("bgm");
+
+// Jika musik sebelumnya ON → langsung play
+if (sessionStorage.getItem("music") === "on") {
+    audio.play().catch(()=>{});
+}
+
+// Fungsi tombol Next
+function nextPage(url) {
+    audio.play(); 
+    sessionStorage.setItem("music", "on");
+    window.location.href = url;
+}
+function prevPage(url) {
+    audio.play(); 
+    sessionStorage.setItem("music", "on");
+    window.location.href = url;
+}
+</script>
+</style>
+
+</head>
+<body>
+    <header>
+         <a href="#" class="logo">Amesha Afrian</a>
+
+        <nav>
+            <a href="index.html" >Home</a>
+            <a href="projects.html" >projects</a>
+            <a href="skills.html" >Skills</a>
+            <a href="edu.html" >Education</a>
+            <a href="exp.html" >Experience</a>
+            <a href="contact.html" >Contact</a>
+        </nav>
+    </header>
+
+<div class="education-container">
+
+    <h1 class="edu-title">Education</h1>
+
+    <!-- Universitas -->
+    <section class="edu-section fade-up">
+        <h2>Universitas Pamulang</h2>
+        <p class="edu-sub">Teknik Informatika | 2023 – Sekarang</p>
+        
+        <div class="edu-line"></div>
+
+        <p class="edu-desc fade-right">
+            Fokus saya saat ini adalah mengembangkan kemampuan teknis seperti pemrograman,
+            struktur data, analisis sistem, dan dasar-dasar kecerdasan buatan. Saya sedang mengarahkan
+            diri ke bidang software development dan AI engineering, dengan menekankan progres yang
+            terukur, bukan sekadar pengetahuan luas tanpa arah.
+        </p>
+    </section>
+
+    <!-- Sekolah -->
+    <section class="edu-section fade-up">
+        <h2>SMKS Fadillah</h2>
+        <p class="edu-sub">Teknik Komputer dan Jaringan | 2020 – 2023</p>
+
+        <div class="edu-line"></div>
+
+        <p class="edu-desc fade-left">
+            Masa sekolah membentuk fondasi teknis pertama saya: memahami hardware,
+            jaringan, troubleshooting, dan pola pikir sistematis ketika membedah masalah.
+            Ini juga periode yang membuat saya menyadari bahwa saya cenderung belajar lebih cepat
+            lewat eksperimen langsung dibanding teori semata.
+        </p>
+
+        <p class="edu-reflection fade-left">
+            Saya menyadari bahwa kemajuan saya lebih lambat ketika saya mengikuti apa yang mudah,
+            bukan apa yang penting. Karena itu saya mulai belajar secara lebih jujur terhadap diri sendiri—
+            menilai skill, kebiasaan, dan kelemahan tanpa defensif.
+        </p>
+    </section>
+
+    <!-- Education Impact -->
+    <section class="edu-section fade-up">
+        <h2>Dampak Pendidikan Terhadap Arah Hidup</h2>
+        <div class="edu-line"></div>
+        <p class="edu-desc fade-right">
+            Pendidikan memberi saya kerangka untuk berpikir lebih dalam. Bukan sekadar memahami teknologi,
+            tetapi memahami diri sendiri: kemampuan, batasan, serta peta jalan yang realistis menuju karir
+            yang tidak saya dapatkan secara instan, tetapi dibangun secara bertahap dan jujur.
+        </p>
+    </section>
+
+    <!-- Quotes -->
+    <section class="edu-section fade-up">
+        <h2>Inspirasi</h2>
+        <div class="edu-line"></div>
+        <blockquote class="edu-quote fade-up">
+            “We are what we repeatedly do. Excellence, then, is not an act but a habit.”
+            <span>— Aristotle</span>
+        </blockquote>
+    </section>
+
+</div>
+<button class="next-btn" onclick="nextPage('exp.html')">
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
+<button class="prev-btn"  onclick="prevPage('skillsZz.html')">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+
+<script>
+    const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+
+    function reveal() {
+        elements.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 60) {
+                el.classList.add('fade-show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>

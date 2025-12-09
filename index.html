@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+<script src="script.js"></script>
+<audio id="bgm" src="C:\Users\LENOVO\tugas\shdD\Nadin Amizah - Rayuan Perempuan Gila (Official Lyric Video) - Nadin Amizah.mp3" autoplay loop muted></audio>
+<body>
+    <header>
+        <a href="#" class="logo">Amesha Afrian</a>
+
+        <nav>
+            <a href="index.html" > Home</a>
+            <a href="projects.html" >Projects</a>
+            <a href="skills.html" >Skills</a>
+            <a href="edu.html" >Education</a>
+            <a href="exp.html" >Experience</a>
+            <a href="contact.html" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="WhatsApp Image 2025-12-07 at 15.50.51_aba43b13.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hai, Saya <span>Amesha</span></h1>
+            <h3 class="typing-text">Saya adalah <span></span></h3>
+            <p>Seorang mahasiswa yang membangun kompetensi di bidang teknologi melalui proyek praktis dan pengalaman nyata di industri. Selalu terbiasa bekerja dengan akurasi tinggi, ketertiban data, serta tuntutan operasional harian yang konsisten. Saat ini Saya fokus mengembangkan kemampuan teknis melalui pembuatan aplikasi dan sistem sederhana yang menuntut pemahaman logika, struktur, dan kerapihan kerja.</p>
+            <div class="social-icons">
+            <a href="https://www.facebook.com/share/1GKtMMuQQu/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/Autumnbreeze1221"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/Ame_shakespeare?t=0LkijQErVSaAp_2HIjDuYw&s=09"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/tiramesucake_/?igsh=dDdmZjB4eG1xaDZj#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="https://wa.link/437mgn" class="btn">Hire me</a>
+        </div>
+        <button class="next-btn" onclick="nextPage('projects.html')">
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
+<script>
+const audio = document.getElementById("bgm");
+
+// Jika musik sebelumnya ON → langsung play
+if (sessionStorage.getItem("music") === "on") {
+    audio.play().catch(()=>{});
+}
+
+// Fungsi tombol Next
+function nextPage(url) {
+    audio.play(); 
+    sessionStorage.setItem("music", "on");
+    window.location.href = url;
+}
+</script>
+    </section>
+    </body>
+</html>
